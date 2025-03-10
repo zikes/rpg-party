@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://r75ikwb3yisp"]
+
+[ext_resource type="Script" uid="uid://dvf1wd5uwff50" path="res://main.gd" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://bheltarp2jx4t" path="res://character.tscn" id="1_ig7tw"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_0xm2m")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -11.0
+offset_top = -13.0
+offset_right = 1175.0
+offset_bottom = 665.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+
+[node name="Character" parent="." instance=ExtResource("1_ig7tw")]
+position = Vector2(372, 178)
+
+[node name="Character2" parent="." node_paths=PackedStringArray("Following") instance=ExtResource("1_ig7tw")]
+position = Vector2(870, 229)
+Following = NodePath("../Character")
+
+[node name="Character3" parent="." node_paths=PackedStringArray("Following") instance=ExtResource("1_ig7tw")]
+position = Vector2(416, 430)
+Following = NodePath("../Character2")
+
+[node name="Character4" parent="." node_paths=PackedStringArray("Following") instance=ExtResource("1_ig7tw")]
+position = Vector2(697, 481)
+Following = NodePath("../Character3")
+
+[node name="Character5" parent="." node_paths=PackedStringArray("Following") instance=ExtResource("1_ig7tw")]
+position = Vector2(953, 519)
+Following = NodePath("../Character4")
